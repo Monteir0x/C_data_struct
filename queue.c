@@ -13,9 +13,8 @@ typedef struct
         return q->front == -1;
     }
 
-
     bool is_full(queue *q){
-        return q->rear == CAP;
+        return q->rear == CAP -1;
     }
 
     void enqueue(queue *q, int data){
@@ -26,7 +25,6 @@ typedef struct
         q->rear++;
         q->data[q->rear] = data;
     }
-
 
     int dequeue(queue *q){
         if(is_empty(q)) return -1;
